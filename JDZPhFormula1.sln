@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JDZPhFormula1", "JDZPhFormula1\JDZPhFormula1.csproj", "{99A55CFD-C4E6-4041-83E2-E4E24C7AF793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JDZPhFormula1.Tests", "JDZPhFormula1.Tests\JDZPhFormula1.Tests.csproj", "{1B708E7B-66C6-4221-8ACD-07FD0ED02441}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99A55CFD-C4E6-4041-83E2-E4E24C7AF793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A55CFD-C4E6-4041-83E2-E4E24C7AF793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A55CFD-C4E6-4041-83E2-E4E24C7AF793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A55CFD-C4E6-4041-83E2-E4E24C7AF793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B708E7B-66C6-4221-8ACD-07FD0ED02441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B708E7B-66C6-4221-8ACD-07FD0ED02441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B708E7B-66C6-4221-8ACD-07FD0ED02441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B708E7B-66C6-4221-8ACD-07FD0ED02441}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01DD33F1-E6A9-41D8-8A51-5892F1973A81}
+	EndGlobalSection
+EndGlobal

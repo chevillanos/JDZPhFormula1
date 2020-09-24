@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/images/JDZ.png" />
+    <link rel="stylesheet" href="~/fonts/Formula1-Regular.otf" />
+    <script src="https://kit.fontawesome.com/82d874878b.js" crossorigin="anonymous"></script>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header class="fixed-top">
+        <div class="container-fluid nav-global">
+            <div class="container">
+                <div class="row">
+                    <img class="logo-global" src="~/images/JDZ.png" />
+                    <a class="nav-bronze" href="#">
+                        BRONZE <i class="fa fa-trophy" aria-hidden="true"></i>
+                    </a>
+                    <a class="nav-silver" href="#">
+                        SILVER <i class="fa fa-trophy" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid navcontent">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="#">
+                        <img class="logo" src="~/images/f1_logo.svg" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Drivers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Teams</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Standings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Schedule</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+    </header>
+    <div class="container-fluid event-tracker">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-6">
+                    <div class="inner-left">
+                        <div class="header">
+                            <div class="header-left">
+                                <span class="round">ROUND X</span>
+                                <span class="race-date">RACE DATE</span>
+                            </div>
+                        </div>
+                        <div class="event-location">
+                            <a href="#">
+                                <div class="location">
+                                    <img /> @*FLAG*@ TEST <span>COUNTRY NAME >>></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-6">
+                    <div class="clock-placeholder">
+                        <p class="clock-header">RACE DAY</p>
+                        <div class="clock">
+                            <div class="days">
+                                <p>00</p>
+                                <span>DAYS</span>
+                            </div>
+                            <div class="hours">
+                                <p>00</p>
+                                <span>HOURS</span>
+                            </div>
+                            <div class="minutes">
+                                <p>00</p>
+                                <span>MINS</span>
+                            </div>
+                            <div class="seconds">
+                                <p>00</p>
+                                <span>SECS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
