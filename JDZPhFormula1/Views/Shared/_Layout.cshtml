@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,116 +7,100 @@
     <link rel="icon" href="~/images/JDZ.png" />
     <link rel="stylesheet" href="~/fonts/Formula1-Regular.otf" />
     <script src="https://kit.fontawesome.com/82d874878b.js" crossorigin="anonymous"></script>
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>JDZ Ph Formula 1 - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <header class="fixed-top">
-        <div class="container-fluid nav-global">
-            <div class="container">
-                <div class="row">
-                    <img class="logo-global" src="~/images/JDZ.png" />
-                    <a class="nav-bronze" href="#">
-                        BRONZE <i class="fa fa-trophy" aria-hidden="true"></i>
-                    </a>
-                    <a class="nav-silver" href="#">
-                        SILVER <i class="fa fa-trophy" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid navcontent">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand" href="#">
-                        <img class="logo" src="~/images/f1_logo.svg" />
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarMenu">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Drivers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Teams</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Standings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Schedule</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+<body class="body-flex">
 
+    @{ 
+        Html.RenderAction("HomeDetails", "Home");
+    }
 
-
-    </header>
-    <div class="container-fluid event-tracker">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 col-lg-7 col-md-6">
-                    <div class="inner-left">
-                        <div class="header">
-                            <div class="header-left">
-                                <span class="round">ROUND X</span>
-                                <span class="race-date">RACE DATE</span>
-                            </div>
-                        </div>
-                        <div class="event-location">
-                            <a href="#">
-                                <div class="location">
-                                    <img /> @*FLAG*@ TEST <span>COUNTRY NAME >>></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-5 col-md-6">
-                    <div class="clock-placeholder">
-                        <p class="clock-header">RACE DAY</p>
-                        <div class="clock">
-                            <div class="days">
-                                <p>00</p>
-                                <span>DAYS</span>
-                            </div>
-                            <div class="hours">
-                                <p>00</p>
-                                <span>HOURS</span>
-                            </div>
-                            <div class="minutes">
-                                <p>00</p>
-                                <span>MINS</span>
-                            </div>
-                            <div class="seconds">
-                                <p>00</p>
-                                <span>SECS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    <div class="container body-content content-flex">
 
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
-    
 
+    <footer>
+        <!-- Footer Links -->
+        <div class="container page-footer font-small clearfix">
+            <div class="container-fluid text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <div class="footer-header col-md-12">
+                        <a href="/Home/About">Credits</a>
+                        <a href="https://www.facebook.com/JDZPhF1GP">Contact Us</a>
+                    </div>
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3">
+
+                        <!-- Content -->
+                        <h5 class="text-uppercase">Partners</h5>
+                        <a href="https://www.facebook.com/simracingph">Sim Racing PH</a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mb-md-0 mb-6">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Drivers Media</h5>
+                        <div class="drivers-media">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://www.facebook.com/JDZGamePlays/">Johnny Driftzone</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCaym-Qprge7TbXOYMPAiKug">Keith Co</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/MimilsRESING">Sev Tagulo</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/TototPlays">Lex Cabanting</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://www.facebook.com/farmb0yfan">Paul Au</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/PoloydGP">Kenneth Flores</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/carlsupersuave/videos">Carl Henry</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Your Name Here</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+            <!-- Copyright -->
+            <div class="footer-copyright py-3">
+                © @DateTime.Now.Year Copyright:
+                <a href="https://www.facebook.com/JDZPhF1GP"> JDZ Ph F1</a>
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
+
+
 </html>

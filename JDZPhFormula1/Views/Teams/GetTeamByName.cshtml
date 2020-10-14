@@ -1,0 +1,80 @@
+﻿@model JDZPhFormula1.ViewModels.TeamDetails
+
+
+@{
+    ViewBag.Title = Model.Team.FullTeamName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="content">
+
+
+    <section class="row team-feature">
+        <div class="col-md-6">
+            <div class="row d-flex justify-content-around">
+                <img class="team-logo " src="~/@Model.Team.LogoURL" />
+            </div>
+            <div class="row">
+                <p class="team-profile d-flex  justify-content-center">@Model.Team.Profile</p>
+                <div class="col-md-2">BRONZE: @Model.BronzeScore</div>
+                <div class="col-md-2">SILVER: @Model.SilverScore</div>
+                <div class="col-md-2">TOTAL: @Model.TotalTeamScore</div>
+            </div>            
+        </div>
+        <div class="col-md-6 car-feature-wrap">
+            @{
+                var carURL = Model.Team.Name.Replace(" ", "").ToLower() + ".jpg";
+            }
+            <img class="car-feature" src="~/images/cars/@carURL" />
+        </div>
+    </section>
+
+    <section class="row team-drivers-feature">
+        <div class="card-deck">
+            @for (int d = 0; d < Model.Drivers.Count; d++)
+            {
+                string localURL;
+                if (Model.Drivers[d].AvatarURL == null)
+                {
+                    localURL = "images/jdz.png";
+                }
+
+                else
+                {
+
+                    localURL = Model.Drivers[d].AvatarURL;
+                }
+
+                if (Model.Drivers[d].ClassificationId == 1)
+                {
+                    <div class="card d-none d-sm-block">
+                        <div class="card-body card-img-overlay">
+                            <h5 class="card-title">Bronze Class</h5>
+                        </div>
+                        <img src="~/@localURL" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">@Model.Drivers[d].Name - @Model.Drivers[d].Team</p>
+                            <p class="card-text">@Model.Drivers[d].Score POINTS</p>
+                        </div>
+                    </div>
+                }
+                if (Model.Drivers[d].ClassificationId == 2)
+                {
+                    <div class="card d-none d-sm-block">
+                        <div class="card-body card-img-overlay">
+                            <h5 class="card-title">Silver Class</h5>
+                        </div>
+                        <img src="~/@localURL" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">@Model.Drivers[d].Name - @Model.Drivers[d].Team</p>
+                            <p class="card-text">@Model.Drivers[d].Score POINTS</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+
+</div>

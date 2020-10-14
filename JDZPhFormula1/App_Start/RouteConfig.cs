@@ -13,6 +13,15 @@ namespace JDZPhFormula1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "ByClassificationHomePage",
+                url: "{classificationName}",
+                defaults: new { controller = "Drivers", action = "ByClassification" },
+                new { classificationName = @"Bronze|Silver|Gold" }
+                );
+                        
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

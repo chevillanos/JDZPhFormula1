@@ -4,18 +4,72 @@
 }
 
 /*GLOBAL*/
+html {
+    height: 100%;
+}
+
 body {
     font-family: Formula1-Regular;
 }
+
+.body-flex {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-flex {
+    flex: 1;
+}
+
+section {
+    margin: 70px 0;
+}
+
 
 .container-fluid {
     padding: 0;
 }
 
+a:link, a:visited {
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #e10600;
+}
+
+footer {
+    background-color: #15151e;
+    color: #fff;
+    position: relative;
+    height: auto;
+    bottom: 0;
+    width: 100%;
+}
 
 /*NAVIGATION*/
 .navbar {
     padding-left: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
+
+.nav-item a:hover {
+    background: #15151e;
+}
+
+.header-link:hover, a.navbar-brand:hover {
+    color: #fff;
+    border-bottom: 0;
 }
 
 .nav-global {
@@ -32,14 +86,31 @@ body {
     margin: 5px 7px 0;
 }
 
-.nav-bronze:hover {
+    .nav-bronze:hover {
+        color: #cd7f32;
+    }
+
+    .nav-silver:hover {
+        color: #c2bdb0;
+    }
+
+.bronze {
     color: #cd7f32;
 }
 
-.nav-silver:hover {
+.silver {
     color: #c2bdb0;
 }
 
+.navbar, .navbarMenu {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-nav .nav-link {
+    padding-top: 12px;
+    padding-bottom: 11px;
+}
 
 .logo-global {
     height: 30px;
@@ -48,7 +119,6 @@ body {
 
 .navcontent {
     background-color: #e10600;
-    
 }
 
 .logo {
@@ -58,9 +128,113 @@ body {
 .event-tracker {
     background: #000;
     color: white;
-    margin-top: 110px;
+    margin-top: 95px;
     padding: 5px 0;
 }
+
+
+.dropdown-menu {
+    background: #15151e;
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+    width: 100vw !important;
+    position: absolute !important;
+    margin-left: -50vw;
+    left: 50%;
+    padding-bottom: 20px;
+}
+
+.dropdown-container {
+    margin: 10px 0 10px;
+    display: flex;
+}
+
+.dropdown-elements {
+    margin: 20px 40px;
+}
+
+.drivers-row {
+    padding-bottom: 20px;
+}
+
+a.team-drivers-nav {
+    width: 220px;
+    margin-top: 20px;
+    border: 1px solid #67676d;
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 10px;
+    font-size: 0.9rem;
+    padding-bottom: 5px;
+    margin-right: 15px;
+    left: 50px;
+}
+
+    a.team-drivers-nav:hover {
+        width: 220px;
+        margin-top: 20px;
+        border: 1px solid #e10600;
+        border-top: 0;
+        border-left: 0;
+        border-bottom-right-radius: 10px;
+        font-size: 0.9rem;
+        padding-bottom: 5px;
+        margin-right: 15px;
+        left: 50px;
+        color: #fff !important;
+    }
+
+
+h5.teams-nav-heading {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    border: 1px solid #67676d;
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 10px;
+}
+
+h5.drivers-nav-heading {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #67676d;
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 10px;
+}
+
+.team-text-nav {
+    position: absolute;
+}
+
+.team-img-nav img {
+    width: 220px;
+    margin-top: 20px;
+    border: 1px solid #67676d;
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 10px;
+    padding-right: 15px;
+}
+
+    .team-img-nav img:hover {
+        width: 220px;
+        margin-top: 20px;
+        border: 1px solid #e10600;
+        border-top: 0;
+        border-left: 0;
+        border-bottom-right-radius: 10px;
+        padding-right: 15px;
+    }
+
+a.team-img-nav:hover {
+    border-bottom: 0;
+}
+
 
 /*CLOCK*/
 .clock-placeholder {
@@ -88,4 +262,124 @@ body {
     padding: 2% 0 0;
 }
 
+/* MAIN PAGE CONTENT */
 
+.top-three {
+    margin: 20px 0;
+}
+
+.drivers-standing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-deck {
+    color: #fff;
+}
+
+    .card-deck .card {
+        background-color: #15151e;
+    }
+
+
+.second-place {
+    height: 50%;
+}
+
+/* FOOTER */
+.page-footer {
+    padding: 10px 0 10px;
+}
+
+.footer-header {
+    margin-bottom: 5px;
+}
+
+    .footer-header a {
+        margin-right: 20px;
+    }
+
+.drivers-media {
+    display: flex;
+}
+
+    .drivers-media ul {
+        width: 50%;
+    }
+
+/*TEAM PAGE*/
+.car-feature {     
+    transition: 0.3s;
+}
+
+.car-feature:hover {
+    transform: scale(1.1);
+}
+
+img.car-feature {
+    width: 570px;
+    height: 303.75px;
+}
+
+.car-feature-wrap {
+    width: 570px;
+    height: 303.75px;
+    overflow: hidden;
+    padding-left: 0;
+}
+
+.team-logo {
+    width: 170px;
+}
+
+.team-profile {
+    font-size: 0.8rem;
+    padding-right: 10px;
+    margin-top: 20px;    
+}
+
+
+/*TEAM COLORS*/
+
+.mclaren {
+    background-color: #ff8700;
+}
+
+.ferrari {
+    background-color: #DC0000;
+}
+
+.renault {
+    background-color: #FFF500;
+    color: #000 !important;
+}
+
+.mercedes {
+    background-color: #00D2BE
+}
+
+.redbull {
+    background-color: #1E41FF;
+}
+
+.haas {
+    background-color: #787878;
+}
+
+.racingpoint {
+    background-color: #F596C8;
+}
+
+.alphatauri {
+    background-color: #FFFFFF;
+    color: #000 !important;
+}
+
+.alfaromeo {
+    background-color: #9B0000;
+}
+
+.williams {
+    background-color: #0082fa;
+}

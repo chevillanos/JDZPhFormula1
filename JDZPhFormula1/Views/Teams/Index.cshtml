@@ -1,0 +1,16 @@
+﻿@model List<JDZPhFormula1.Models.Team>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Teams</h2>
+
+<ul>
+    @foreach (var t in Model)
+    {
+        <li>@t.Name</li>
+    }
+</ul>
+
+

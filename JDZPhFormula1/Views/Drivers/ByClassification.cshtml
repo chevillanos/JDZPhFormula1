@@ -1,0 +1,87 @@
+﻿@model  List<JDZPhFormula1.ViewModels.DriverStandings>
+
+@{
+    ViewBag.Title = "Bronze Class";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Bronze Drivers</h2>
+
+    @foreach (var driver in @Model)
+    {
+        <ul>
+            <li>@driver.Name - @driver.TeamId</li>
+        </ul>
+    }*@
+
+<section>
+    <div class="container-fluid top-three">
+        <div class="card-deck">           
+            <div class="card d-none d-sm-block">
+                <div class="card-body card-img-overlay">
+                    <h5 class="card-title">2nd Place</h5>
+                </div>
+                @{ 
+                    string localURL;
+                    if (Model[1].AvatarURL == null)
+                    {
+                        localURL = "images/JDZ.png";
+                    }
+                    else
+                    {
+                        localURL = Model[1].AvatarURL;
+                    }
+                }
+                <img src="~/@localURL" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">@Model[1].Name - @Model[1].Team</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body card-img-overlay">
+                    <h5 class="card-title">1st Place</h5>
+                </div>
+                <img src="~/images/JDZ.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">@Model[0].Name - @Model[0].Team</p>
+                </div>
+            </div>
+            <div class="card d-none d-sm-block">
+                <div class="card-body card-img-overlay">
+                    <h5 class="card-title">3rd Place</h5>
+                </div>
+                <img src="~/images/JDZ.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">@Model[2].Name - @Model[2].Team</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="drivers-standing content">
+        <table class="table table-sm table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>POS</th>
+                    <th>NAME</th>
+                    <th>TEAM</th>
+                    <th>POINTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var d = 0; d < 10; d++)
+                {
+                <tr onclick="location.href = '@Url.Action("Details", "Drivers", new { id=Model[d].Id })'">
+                    <td>@(d+1)</td>
+                    <td>@Model[d].Name</td>
+                    <td>@Model[d].Team</td>
+                    <td>@Model[d].Score</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+

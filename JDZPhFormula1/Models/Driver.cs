@@ -12,7 +12,8 @@ namespace JDZPhFormula1.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public char DriverStatus { get; set; }
+        [StringLength(1)]
+        public string DriverStatus { get; set; }
         [Required]
         public DateTime JoiningDate { get; set; }
         public DateTime? LeaveDate { get; set; }
@@ -20,5 +21,10 @@ namespace JDZPhFormula1.Models
         public int TeamId { get; set; }
         [Required]
         public int ClassificationId { get; set; }
+        public string AvatarURL { get; set; }
+
+        // Navigation property for FK
+        public Team Team { get; set; }
+        public Classification Classification { get; set; }
     }
 }

@@ -1,0 +1,33 @@
+﻿@model List<JDZPhFormula1.ViewModels.DriverStandings>
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Avatar URL</th>
+            <th>Team</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (var d = 0; d < 10; d++)
+        {
+        <tr>
+            <td>@Model[d].Id</td>
+            <td>@Model[d].Name</td>
+            <td>@Model[d].AvatarURL</td>
+            <td>@Model[d].Team</td>
+            <td>@Model[d].Score</td>
+        </tr>
+        }
+    </tbody>
+
+</table>

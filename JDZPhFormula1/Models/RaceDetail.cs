@@ -13,6 +13,7 @@ namespace JDZPhFormula1.Models
         public DateTime Schedule { get; set; }
         public int ClassificationId { get; set; }
         public int GameSeasonId { get; set; }
+        public bool IsActive { get; set; }
 
         public virtual Classification Classification { get; set; }
         public virtual GameSeason GameSeason { get; set; }

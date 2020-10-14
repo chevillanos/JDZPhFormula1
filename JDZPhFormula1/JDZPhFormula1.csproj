@@ -183,12 +183,69 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RaceResultsController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009300832216_InitialModel.cs" />
+    <Compile Include="Migrations\202009300832216_InitialModel.Designer.cs">
+      <DependentUpon>202009300832216_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009300848203_AddTeamAndClassification.cs" />
+    <Compile Include="Migrations\202009300848203_AddTeamAndClassification.Designer.cs">
+      <DependentUpon>202009300848203_AddTeamAndClassification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009300851249_SeedTeamAndClassification.cs" />
+    <Compile Include="Migrations\202009300851249_SeedTeamAndClassification.Designer.cs">
+      <DependentUpon>202009300851249_SeedTeamAndClassification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009300906389_UpdateTeamAvatarURL.cs" />
+    <Compile Include="Migrations\202009300906389_UpdateTeamAvatarURL.Designer.cs">
+      <DependentUpon>202009300906389_UpdateTeamAvatarURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009300918012_SeedDrivers.cs" />
+    <Compile Include="Migrations\202009300918012_SeedDrivers.Designer.cs">
+      <DependentUpon>202009300918012_SeedDrivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009300924542_DeleteSeedDriver.cs" />
+    <Compile Include="Migrations\202009300924542_DeleteSeedDriver.Designer.cs">
+      <DependentUpon>202009300924542_DeleteSeedDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060748310_TeamsClassRaceSessionRaceResultTables.cs" />
+    <Compile Include="Migrations\202010060748310_TeamsClassRaceSessionRaceResultTables.Designer.cs">
+      <DependentUpon>202010060748310_TeamsClassRaceSessionRaceResultTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060827204_RaceSessionRaceDetails.cs" />
+    <Compile Include="Migrations\202010060827204_RaceSessionRaceDetails.Designer.cs">
+      <DependentUpon>202010060827204_RaceSessionRaceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060841566_RaceSessionsUpdateRaceResult.cs" />
+    <Compile Include="Migrations\202010060841566_RaceSessionsUpdateRaceResult.Designer.cs">
+      <DependentUpon>202010060841566_RaceSessionsUpdateRaceResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060904528_removeIsFastestLapRaceSession.cs" />
+    <Compile Include="Migrations\202010060904528_removeIsFastestLapRaceSession.Designer.cs">
+      <DependentUpon>202010060904528_removeIsFastestLapRaceSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010080810314_RaceDetailsIsActive.cs" />
+    <Compile Include="Migrations\202010080810314_RaceDetailsIsActive.Designer.cs">
+      <DependentUpon>202010080810314_RaceDetailsIsActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010130412217_TeamAddProperties.cs" />
+    <Compile Include="Migrations\202010130412217_TeamAddProperties.Designer.cs">
+      <DependentUpon>202010130412217_TeamAddProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010140653170_AddLogoURLTeam.cs" />
+    <Compile Include="Migrations\202010140653170_AddLogoURLTeam.Designer.cs">
+      <DependentUpon>202010140653170_AddLogoURLTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Classification.cs" />
     <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\GameSeason.cs" />
@@ -199,7 +256,16 @@
     <Compile Include="Models\RaceSession.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DriverRepository.cs" />
+    <Compile Include="Repository\HomeRepository.cs" />
+    <Compile Include="Repository\TeamRepository.cs" />
+    <Compile Include="Services\IDriverService.cs" />
+    <Compile Include="Services\IHomeService.cs" />
+    <Compile Include="Services\ITeamService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\DriverStandings.cs" />
+    <Compile Include="ViewModels\HomeDetails.cs" />
+    <Compile Include="ViewModels\TeamDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -212,19 +278,40 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\114348969_115133253621497_8698621194772938261_o.jpg" />
-    <Content Include="images\cars\image%281%29.png" />
-    <Content Include="images\cars\image%282%29.png" />
-    <Content Include="images\cars\image%283%29.png" />
-    <Content Include="images\cars\image%284%29.png" />
-    <Content Include="images\cars\image%285%29.png" />
-    <Content Include="images\cars\image%286%29.png" />
-    <Content Include="images\cars\image%287%29.png" />
-    <Content Include="images\cars\image%288%29.png" />
-    <Content Include="images\cars\image%289%29.png" />
-    <Content Include="images\cars\image.png" />
+    <Content Include="images\cars\alfaromeo.jpg" />
+    <Content Include="images\cars\alphatauri.jpg" />
+    <Content Include="images\cars\ferrari.jpg" />
+    <Content Include="images\cars\haas.jpg" />
+    <Content Include="images\cars\mclaren.jpg" />
+    <Content Include="images\cars\mercedes.jpg" />
+    <Content Include="images\cars\nav-alfaromeo.png" />
+    <Content Include="images\cars\nav-alphatauri.png" />
+    <Content Include="images\cars\nav-ferrari.png" />
+    <Content Include="images\cars\nav-haas.png" />
+    <Content Include="images\cars\nav-mclaren.png" />
+    <Content Include="images\cars\nav-mercedes.png" />
+    <Content Include="images\cars\nav-racingpoint.png" />
+    <Content Include="images\cars\nav-redbull.png" />
+    <Content Include="images\cars\nav-renault.png" />
+    <Content Include="images\cars\nav-williams.png" />
+    <Content Include="images\cars\racingpoint.jpg" />
+    <Content Include="images\cars\redbull.jpg" />
+    <Content Include="images\cars\renault.jpg" />
+    <Content Include="images\cars\williams.jpg" />
+    <Content Include="images\drivers\carlhenry.jpg" />
     <Content Include="images\f1_logo.svg" />
     <Content Include="images\fia_logo.png" />
     <Content Include="images\JDZ.png" />
+    <Content Include="images\logo\alfaromeo-logo.jpg" />
+    <Content Include="images\logo\alphatauri-logo.jpg" />
+    <Content Include="images\logo\ferrari-logo.jpg" />
+    <Content Include="images\logo\haas-logo.jpg" />
+    <Content Include="images\logo\mclaren-logo.jpg" />
+    <Content Include="images\logo\mercedes-logo.jpg" />
+    <Content Include="images\logo\racingpoint-logo.jpg" />
+    <Content Include="images\logo\redbull-logo.jpg" />
+    <Content Include="images\logo\renault-logo.jpg" />
+    <Content Include="images\logo\williams-logo.jpg" />
     <Content Include="images\pirelli.png" />
     <Content Include="images\rolex-logo-green.png" />
     <Content Include="images\rolex.png" />
@@ -265,6 +352,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\myscript.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -380,6 +468,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Drivers\ByClassification.cshtml" />
+    <Content Include="Views\Drivers\Details.cshtml" />
+    <Content Include="Views\RaceResults\DriverStandings.cshtml" />
+    <Content Include="Views\Shared\_NavHeader.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Teams\GetTeamByName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -394,6 +488,47 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009300832216_InitialModel.resx">
+      <DependentUpon>202009300832216_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300848203_AddTeamAndClassification.resx">
+      <DependentUpon>202009300848203_AddTeamAndClassification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300851249_SeedTeamAndClassification.resx">
+      <DependentUpon>202009300851249_SeedTeamAndClassification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300906389_UpdateTeamAvatarURL.resx">
+      <DependentUpon>202009300906389_UpdateTeamAvatarURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300918012_SeedDrivers.resx">
+      <DependentUpon>202009300918012_SeedDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300924542_DeleteSeedDriver.resx">
+      <DependentUpon>202009300924542_DeleteSeedDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060748310_TeamsClassRaceSessionRaceResultTables.resx">
+      <DependentUpon>202010060748310_TeamsClassRaceSessionRaceResultTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060827204_RaceSessionRaceDetails.resx">
+      <DependentUpon>202010060827204_RaceSessionRaceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060841566_RaceSessionsUpdateRaceResult.resx">
+      <DependentUpon>202010060841566_RaceSessionsUpdateRaceResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060904528_removeIsFastestLapRaceSession.resx">
+      <DependentUpon>202010060904528_removeIsFastestLapRaceSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010080810314_RaceDetailsIsActive.resx">
+      <DependentUpon>202010080810314_RaceDetailsIsActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010130412217_TeamAddProperties.resx">
+      <DependentUpon>202010130412217_TeamAddProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010140653170_AddLogoURLTeam.resx">
+      <DependentUpon>202010140653170_AddLogoURLTeam.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

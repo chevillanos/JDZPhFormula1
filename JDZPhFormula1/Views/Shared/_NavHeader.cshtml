@@ -1,0 +1,142 @@
+﻿@model JDZPhFormula1.ViewModels.HomeDetails
+
+<header class="fixed-top">
+    <div class="container-fluid nav-global">
+        <div class="container">
+            <div class="row">
+                <img class="logo-global" src="~/images/JDZ.png" />
+                <a class="nav-bronze" href="/Bronze">
+                    BRONZE <i class="fa fa-trophy" aria-hidden="true"></i>
+                </a>
+                <a class="nav-silver" href="/Silver">
+                    SILVER <i class="fa fa-trophy" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid navcontent">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="~/images/f1_logo.svg" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item d-none d-lg-block d-xl-block dropdown position-static dmenu">
+                            @* Visible only in full navbar *@
+                            <a class="container nav-link dropdown-toggle header-link" id="driversDropdown" href="#">Drivers </a>
+                            <div class="dropdown-menu w-100 sm-menu">
+                                <div class="container">
+                                    <div class="row drivers-row">
+                                        <h5 class="col-md-11 drivers-nav-heading dropdown-elements bronze">Bronze</h5>
+                                        @foreach (var d in Model.Drivers.Where(d => d.ClassificationId == 1))
+                                        {
+
+                                            <a class="col-md-2 team-drivers-nav @d.Team.Name.Replace(" ", "").ToLower()" href="#">
+                                                @d.Name
+                                            </a>
+                                        }
+                                    </div>
+                                    <div class="row drivers-row">
+                                        <h5 class="col-md-11 drivers-nav-heading dropdown-elements silver">Silver</h5>
+                                        @foreach (var d in Model.Drivers.Where(d => d.ClassificationId == 2))
+                                        {
+
+                                            <a class="col-md-2 team-drivers-nav @d.Team.Name.Replace(" ", "").ToLower()" href="#">
+                                                @d.Name
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item d-block d-md-block d-lg-none">
+                            @* Visible only in navbar collapse *@
+                            <a class="nav-link header-link" href="#">Drivers XS</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block d-xl-block dropdown position-static dmenu">
+                            @* Visible only in full navbar *@
+                            <a class="container nav-link dropdown-toggle header-link" id="teamsDropdown" href="@Url.Action("Index", "Teams", null)">Teams </a>
+
+                            <div class="dropdown-menu w-100 sm-menu">
+                                <div class="container">
+                                    <div class="row">
+                                        <h5 class="col-md-11 teams-nav-heading dropdown-elements">All Teams</h5>
+                                        @foreach (var t in Model.Teams)
+                                        {
+                                            <div class="col-md-2 dropdown-elements">
+                                                <a class="team-img-nav" href="~/Teams/@t.Name">
+                                                    <div class="team-text-nav">@t.Name</div>
+                                                    <img src="~/@t.AvatarURL" />
+                                                </a>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item d-block d-md-block d-lg-none">
+                            <a class="nav-link header-link" href="#">Teams XS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link header-link" href="#">Standings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link header-link" href="#">Schedule</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid event-tracker">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-7 col-md-6">
+                <div class="inner-left">
+                    <div class="header">
+                        <div class="header-left">
+                            <span class="round">@Model.Schedule.TrackName</span>
+                        </div>
+                    </div>
+                    <div class="event-location">
+                        <a href="#">
+                            <div class="location">
+                                <!--<img />--> @*FLAG*@ <!--TEST <span>COUNTRY NAME >>></span>-->
+                                <span class="race-date">@Model.Schedule.Schedule.ToString("dd MMM yyyy") >>></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 col-md-6">
+                <div class="clock-placeholder">
+                    <p class="clock-header">RACE DAY</p>
+                    <div class="clock">
+                        <div class="days">
+                            <p>00</p>
+                            <span>DAYS</span>
+                        </div>
+                        <div class="hours">
+                            <p>00</p>
+                            <span>HOURS</span>
+                        </div>
+                        <div class="minutes">
+                            <p>00</p>
+                            <span>MINS</span>
+                        </div>
+                        <div class="seconds">
+                            <p>00</p>
+                            <span>SECS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
